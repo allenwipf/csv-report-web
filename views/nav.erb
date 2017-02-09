@@ -1,0 +1,25 @@
+
+	<div> 
+		<div style="float:left" id ="leftHeader">
+			  <a href="/index">Home</a>
+		      <a href="/full">All Reports</a>
+		      <a href="/report?name=Sonia">Sonia</a>
+		      <a href="/report?name=Priya">Priya</a>
+		</div>
+		    
+		<div style="float: right" id="rightHeader">      
+			<form action="/login" method="post" <%= if(session[:message] == "true") then ('hidden') end %>>
+				<input type="text" placeholder="username", name="user"></input>
+				<input type="password" placeholder="password", name="pass"></input>
+				<button type="submit" name="login">Log in</button>
+			<form <%= if(session["loginfail"] == "false") then ('hidden') end %>> 
+				<p class="welcome">Not Logged in. Please Log in</p></form>
+			</form>
+
+			<form action="/logout" method="post" <%= if(session[:message] == "false") then ("hidden") end %>>
+				<p class="welcome"> Welcome: <%= session["username"] %>
+				<button type="Submit" name="logout">Log Out</button></p>
+  			</form>
+
+		</div> 
+	</div>

@@ -4,45 +4,46 @@
 <head>
 <meta charset="utf-8">
 <title>CSV Website</title>
+
 <script>
-	$('.js-accordion-trigger').bind('click', function(e){
-	  jQuery(this).parent().find('.submenu').slideToggle('fast');  // apply the toggle to the ul
-	  jQuery(this).parent().toggleClass('is-expanded');
-	  e.preventDefault();
-	});
+function process()
+{
+var url="/report?name=" + document.getElementById("url").value;
+location.href=url;
+return false;
+}
 </script>
+
+
+
 <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
 <body>
+
 <header>
-	<div> 
-		<div style="float:left" id ="leftHeader">
-		      <a href="/full">All Reports</a>
-		      <a href="/report?name=Sonia">Sonia</a>
-		      <a href="/report?name=Priya">Priya</a>
-		</div>
-		    
-		<div style="float: right" id="rightHeader">      
-			<form action="/login" method="post" <%= if(session[:message] == "true") then ('hidden') end %>>
-				<input type="text" placeholder="username", name="user"></input>
-				<input type="password" placeholder="password", name="pass"></input>
-				<button type="submit" name="login">Log in</button>
-			<form <%= if(session["loginfail"] == "false") then ('hidden') end %>> 
-				<p class="welcome">Not Logged in. Please Log in</p></form>
-			</form>
-
-			<form action="/logout" method="post" <%= if(session[:message] == "false") then ("hidden") end %>>
-				<p class="welcome"> Welcome: <%= session["username"] %>
-				<button type="Submit" name="logout">Log Out</button></p>
-  			</form>
-
-		</div> 
-	</div>
+<%= erb :nav %>
 </header>
 
-<div class="content">
 
+<div class="indexPage">
+
+	<div class="dropdown">
+	  <button class="dropbtn">Main Reports</button>
+	  <div class="dropdown-content">
+	    <a href="/full">All Reports</a>
+	    <a href="/report?name=Sonia">Sonia</a>
+	    <a href="/report?name=Priya">Priya</a>
+	  </div>
+	</div>
+
+	<div class="findTrans">
+		<p>Enter any name to see if there are <br>
+		transactions associated with that name.<p>
+		<form onSubmit="return process();">
+		Name: <input type="text" name="url" id="url"> <input type="submit" value="go">
+		</form>
+	</div>
 
 
 </div> 
