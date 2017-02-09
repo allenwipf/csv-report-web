@@ -1,15 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
 
-<h1>Which reports would you like to see?</h1>
-<br>
-	<ul>
-		<li><a href="http://localhost:4567/full">Both</a></li>
-		<li><a href="http://localhost:4567/report?name=Sonia">Sonia</a></li>
-		<li><a href="http://localhost:4567/report?name=Priya">Priya</a></li>
-		<li><a href="http://localhost:4567/report?name=Allen">Allen</a></li>
-	</ul>
+<head>
+<meta charset="utf-8">
+<title>CSV Website</title>
 
-<form get="/report">
+<link rel="stylesheet" type="text/css" href="styles.css">
 
-	
+</head>
+<body>
+<header>
+	<div> 
+		<div style="float:left" id ="leftHeader">
+		      <a href="/full">All Reports</a>
+		      <a href="/report?name=Sonia">Sonia</a>
+		      <a href="/report?name=Priya">Priya</a>
+		</div>
+		    
+		<div style="float: right" id="rightHeader">      
+			<form action="/login" method="post" <%= if(session[:message] == "true") then ('hidden') end %>>
+				<input type="text" placeholder="username", name="user"></input>
+				<input type="password" placeholder="password", name="pass"></input>
+				<button type="submit" name="login">Log in</button>
+			<form <%= if(session["loginfail"] != "true") then ('hidden') end %>> 
+				<p class="welcome">Not Logged in. Please Log in</p></form>
+			</form>
 
-</form>
+			<form action="/logout" method="post" <%= if(session[:message] == "false") then ("hidden") end %>>
+				<p class="welcome"> Welcome: <%= session["username"] %>
+				<button type="Submit" name="logout">Log Out</button></p>
+  			</form>
+
+		</div> 
+	</div>
+</header>
+
+<div class="content">
+    
+
+    <div class='main'><img src="/images/aboutme.jpg" width="500" alt="biking picture"> </div>
+    
+    
+    
+    <div class='main'> 
+    <p id="aboutme"> I know what your thinking, "What an amazing mountain biker<br>
+                    this dude is!" Sadly, that image is not me. I don't know who<br>
+                    it is...and yes that is an amazing jump. If it <em>was</em> me, the <br>
+                    the next image would would be an ambulance.<br><br>
+                    
+                    But enough about that person, let's talk about me. My name<br>
+                    is Allen Wipf. I created this website for a class at Omaha<br>
+                    Code School. I'm pretty excited about learning this stuff <br>
+                    and while I think that jump is pretty cool, I think<br>
+                    learning to code is even cooler.
+       
+    
+    
+     </p>
+        
+    </div>
+  
+</div>  
+
+
+
+
+
+</body>
+</html>

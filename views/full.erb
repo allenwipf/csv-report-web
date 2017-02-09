@@ -1,29 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-us">
 
-<% x=0 %>
+<head>
+<meta charset="utf-8">
+<title>CSV Website</title>
 
-<% @all_accounts.each do |account| %>
-  <br>
-  <h1><%= @names[x] %></h1> 
-  <p>$<%= account.pretty_tally %></p>
-  <hr>
-  <table>
-    <tr>
-      <th>Category</th>
-      <th>Amount</th>
-      <th>Average Transaction</th>
-    </tr>
+<link rel="stylesheet" type="text/css" href="styles.css">
 
-    <% account.categories.each do |category, t| %>
+</head>
+<body>
+<header>
+  <div> 
+    <div style="float:left" id ="leftHeader">
+          <a href="/full">All Reports</a>
+          <a href="/report?name=Sonia">Sonia</a>
+          <a href="/report?name=Priya">Priya</a>
+    </div>
+        
+    <div style="float: right" id="rightHeader">      
+      <form action="/login" method="post" <%= if(session[:message] == "true") then ('hidden') end %>>
+        <input type="text" placeholder="username", name="user"></input>
+        <input type="password" placeholder="password", name="pass"></input>
+        <button type="submit" name="login">Log in</button>
+      <form <%= if(session["loginfail"] != "true") then ('hidden') end %>> 
+        <p class="welcome">Not Logged in. Please Log in</p></form>
+      </form>
+
+      <form action="/logout" method="post" <%= if(session[:message] == "false") then ("hidden") end %>>
+        <p class="welcome"> Welcome: <%= session["username"] %>
+        <button type="Submit" name="logout">Log Out</button></p>
+        </form>
+
+    </div> 
+  </div>
+</header>
+
+
+<div class="main">
+  <% x=0 %>
+
+  <% @all_accounts.each do |account| %>
+    <br>
+    <h1><%= @names[x] %></h1> 
+    <p>$<%= account.pretty_tally %></p>
+    <hr>
+    <table>
       <tr>
-        <td><%= category %></td>
-        <td>$<%= t.pretty_tally %></td>
-        <td align="right">$<%= t.pretty_avg_transaction %></td>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Average Transaction</th>
       </tr>
-    <% end %>
-  </table>
-  <br>
 
-  <% x += 1 %>
-<% end %>
+      <% account.categories.each do |category, t| %>
+        <tr>
+          <td><%= category %></td>
+          <td>$<%= t.pretty_tally %></td>
+          <td align="right">$<%= t.pretty_avg_transaction %></td>
+        </tr>
+      <% end %>
+    </table>
+    <br>
 
-<a href="http://localhost:4567/index">Home</a>
+    <% x += 1 %>
+  <% end %>
+</div>

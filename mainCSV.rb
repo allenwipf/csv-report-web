@@ -4,7 +4,8 @@ require "pry"
 require "csv"
 enable :sessions
 
-logins = {"admin" => "password", "allen" => "password"}
+
+logins = {"admin" => "password", "allen" => "password", "a" =>  "a"}
 
 
 def display_report(name_string)
@@ -31,7 +32,9 @@ get ("/login"){
 post ("/login"){
      if (logins.key?(params["user"]) == true) and (logins[params["user"]] == params["pass"]) then
 		session[:message] = "true"
+		session["username"] = params["user"]
 		redirect("/admin")
+
 	else
 	    redirect("/login_error")
 	    session[:admin] = false

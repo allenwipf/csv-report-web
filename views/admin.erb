@@ -1,6 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>CSV Website</title>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+<header>
+	<div> 
+		<div style="float:left" id ="leftHeader">
+		      <a href="/full">All Reports</a>
+		      <a href="/report?name=Sonia">Sonia</a>
+		      <a href="/report?name=Priya">Priya</a>
+		</div>
+		    
+		<div style="float: right" id="rightHeader">      
+			<form action="/login" method="post" <%= if(session[:message] == "true") then ('hidden') end %>>
+				<input type="text" placeholder="username", name="user"></input>
+				<input type="password" placeholder="password", name="pass"></input>
+				<button type="submit" name="login">Log in</button>
+			<form <%= if(session["loginfail"] != "true") then ('hidden') end %>> 
+				<p class="welcome">Not Logged in. Please Log in</p></form>
+			</form>
+
+			<form action="/logout" method="post" <%= if(session[:message] == "false") then ("hidden") end %>>
+				<p class="welcome"> Welcome: <%= session["username"] %>
+				<button type="Submit" name="logout">Log Out</button></p>
+  			</form>
+
+		</div> 
+	</div>
+</header>
+
+
+<div  class ="inputBox" id="adminInput">
+
 <!-- action is the the method that runs in the main.rb. -->
   <form action ="/submit" method ="post">
 <!--  "name" is the key, anything the user puts in the box is the value -->
+		<h4>Please enter a transaction</h4>
 	   <p> <input type="text" placeholder="name" name="account"></input></p>
 	   <p> <input type="text" placeholder="date" name="date"></input><br></p>
 	   <p> <input type="text" placeholder="paye" name="payee"></input></p>
@@ -12,5 +53,8 @@
   
 
   <form action="/logout" method="post">
-	<p><button type="Submit" name="logout">Log Out</button></p>
   </form>
+</div>
+
+</body>
+</html>

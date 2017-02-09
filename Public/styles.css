@@ -1,0 +1,186 @@
+
+body {
+    
+    background-color: #F9F7F7;
+    font-family: monospace;
+    color: #364F6B;
+    font-size: 12px;
+    
+}
+
+h4 {
+    
+    font-size: 1.5em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    
+}
+
+
+    
+h5 {
+    
+    font-size: 1.2em;
+    margin-top: 0px;
+    padding-top: 5px;
+    
+}
+
+a {
+    
+    font-family: monospace;
+    font-size: 15px;
+    padding: 20px;
+    color: #DBE2EF;
+    text-decoration: none;
+    top: 400px;
+    font-weight: bold;  
+}
+
+.welcome {
+
+    font-family: monospace;
+    font-size: 12px;
+    color: #DBE2EF;
+
+
+}
+
+
+
+
+.current {
+
+    color: #76D3FF;
+}
+
+a:active {
+    color: #E7EAA8;
+}
+
+
+
+p {
+    
+    margin-top: 0;
+}
+
+
+header {
+    
+  
+    position: absolute;
+    top: 0;
+    right: 0;
+    left:0 ;
+    background-color: #2F3C4F;
+    height: 100px;
+ 
+}
+
+
+
+footer {
+    
+    position: relative;
+    top: 60px;
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    font-weight: lighter;
+    color: #303841;
+    font-size: 12px;
+    left:-10px;
+    width: 100%;
+  
+
+}  
+
+
+.main {
+    
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 90px;  
+}
+
+.admin {
+    
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 120px; 
+}
+
+
+.content {
+    
+    display: inline-block;
+    vertical-align: top;
+     padding-left: 10%;
+  
+}
+
+
+
+#rightHeader {
+    
+   padding-top: 30px;
+   padding-right: 20px;
+
+    
+}
+
+
+#leftHeader {
+    
+    padding-top: 30px;
+
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 500px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+.inputBox input[type=text] {
+    width: 250px;
+    padding: 2px 0px;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    font-family: monospace;
+    font-size: 15px;
+}
+
+.inputBox input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+#adminInput{
+
+    padding-top: 125px
+}
+
+
+
+
+
+
+
+
+
+
