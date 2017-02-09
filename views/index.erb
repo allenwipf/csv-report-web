@@ -4,7 +4,13 @@
 <head>
 <meta charset="utf-8">
 <title>CSV Website</title>
-
+<script>
+	$('.js-accordion-trigger').bind('click', function(e){
+	  jQuery(this).parent().find('.submenu').slideToggle('fast');  // apply the toggle to the ul
+	  jQuery(this).parent().toggleClass('is-expanded');
+	  e.preventDefault();
+	});
+</script>
 <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
@@ -22,7 +28,7 @@
 				<input type="text" placeholder="username", name="user"></input>
 				<input type="password" placeholder="password", name="pass"></input>
 				<button type="submit" name="login">Log in</button>
-			<form <%= if(session["loginfail"] != "true") then ('hidden') end %>> 
+			<form <%= if(session["loginfail"] == "false") then ('hidden') end %>> 
 				<p class="welcome">Not Logged in. Please Log in</p></form>
 			</form>
 
@@ -36,15 +42,10 @@
 </header>
 
 <div class="content">
-    
-
-
-  
-</div>  
 
 
 
-
+</div> 
 
 </body>
 </html>

@@ -36,6 +36,7 @@ post ("/login"){
 		redirect("/admin")
 
 	else
+		
 	    redirect("/login_error")
 	    session[:admin] = false
 	end	

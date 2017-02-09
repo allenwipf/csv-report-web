@@ -23,7 +23,7 @@
 				<input type="password" placeholder="password", name="pass"></input>
 				<button type="submit" name="login">Log in</button>
 			<form <%= if(session["loginfail"] != "true") then ('hidden') end %>> 
-				<p class="welcome">Not Logged in. Please Log in</p></form>
+				<p class="welcome">Log in failed. Please try again</p></form>
 			</form>
 
 			<form action="/logout" method="post" <%= if(session[:message] == "false") then ("hidden") end %>>
