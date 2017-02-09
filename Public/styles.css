@@ -94,14 +94,17 @@ footer {
     width: 100%;
   
 
-}  
+} 
+
+
 
 
 .main {
     
     display: inline-block;
     vertical-align: top;
-    padding-top: 90px;  
+
+  
 }
 
 .admin {
@@ -116,7 +119,8 @@ footer {
     
     display: inline-block;
     vertical-align: top;
-     padding-left: 10%;
+    padding-left: 10%;
+    padding-top: 90px; 
   
 }
 
@@ -172,8 +176,15 @@ tr:nth-child(even) {
 
 #adminInput{
 
-    padding-top: 125px
+    padding-top: 25px
 }
+
+.inputBox {
+
+    padding-left: 15px;
+    padding-top: 53px;
+}
+
 
 
 

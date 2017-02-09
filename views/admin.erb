@@ -35,26 +35,27 @@
 	</div>
 </header>
 
+<div class="content">
 
-<div  class ="inputBox" id="adminInput">
+	<div  class ="inputBox" id="adminInput">
 
-<!-- action is the the method that runs in the main.rb. -->
-  <form action ="/submit" method ="post">
-<!--  "name" is the key, anything the user puts in the box is the value -->
-		<h4>Please enter a transaction</h4>
-	   <p> <input type="text" placeholder="name" name="account"></input></p>
-	   <p> <input type="text" placeholder="date" name="date"></input><br></p>
-	   <p> <input type="text" placeholder="paye" name="payee"></input></p>
-	   <p> <input type="text" placeholder="category" name="category"></input></p>
-	   <p> <input type="text" placeholder="outflow" name="outflow"></input></p>
-	   <p> <input type="text" placeholder="inflow" name="inflow"></input></p>
-	   <p> <input type="Submit"></p>
-   </form>
-  
+	<!-- action is the the method that runs in the main.rb. -->
+	  <form action ="/submit" method ="post">
+	<!--  "name" is the key, anything the user puts in the box is the value -->
+			<h4>Please enter a transaction</h4>
+		   <p> <input type="text" placeholder="name" name="account"></input></p>
+		   <p> <input type="text" placeholder="date" name="date"></input><br></p>
+		   <p> <input type="text" placeholder="paye" name="payee"></input></p>
+		   <p> <input type="text" placeholder="category" name="category"></input></p>
+		   <p> <input type="text" placeholder="outflow" name="outflow"></input></p>
+		   <p> <input type="text" placeholder="inflow" name="inflow"></input></p>
+		   <p> <input type="Submit"></p>
+	   </form>
+	  
 
-  <form action="/logout" method="post">
-  </form>
+	  <form action="/logout" method="post">
+	  </form>
+	</div>
 </div>
-
 </body>
 </html>

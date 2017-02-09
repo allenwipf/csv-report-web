@@ -17,7 +17,7 @@ def display_report(name_string)
 end
 
 def write_info(new_info)
-	info = File.open("/Users/Wipf/Code/drills/007/accounts.csv", "a")
+	info = File.open("/Users/Wipf/Code/projects/csv-report-web/accounts.csv", "a")
 	info.print new_info
 	info.close
 end

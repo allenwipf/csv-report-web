@@ -36,39 +36,42 @@
   </div>
 </header>
 
-
-<div class="main">
-<h1><%= @name %></h1> 
-  <h5>$<%= @account.pretty_tally %></h5>
-  <table>
-    <tr>
-      <th>Category</th>
-      <th>Amount</th>
-      <th>Average Transaction</th>
-    </tr>
-<% @account.categories.each do |category, t| %>
-    <tr>
-      <td><%= category %></td>
-      <td>$<%= t.pretty_tally %></td>
-      <td align="right">$<%= t.pretty_avg_transaction %></td>
-    </tr>
-  <% end %>
-  </table>
+<div class="content">
+  <div class="main">
+    <h1><%= @name %></h1> 
+      <h5>$<%= @account.pretty_tally %></h5>
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Amount</th>
+          <th>Average Transaction</th>
+        </tr>
+    <% @account.categories.each do |category, t| %>
+        <tr>
+          <td><%= category %></td>
+          <td>$<%= t.pretty_tally %></td>
+          <td align="right">$<%= t.pretty_avg_transaction %></td>
+        </tr>
+      <% end %>
+      </table>
+  </div>
+  <div class="main">
+    <div class="inputBox" <%= if(session[:message] == "false") then ('hidden') end %>>
+    <!-- action is the the method that runs in the main.rb. -->
+      <form action ="/submit" method ="post">
+      <h2>add a transaction for <%= @name %></h2>
+    <!--  "name" is the key, anything the user puts in the box is the value -->
+       <p> <input type="hidden" value="<%= @name %>" name="account"></input></p>
+       <p> <input  type="text" placeholder="date" name="date"></input><br></p>
+       <p> <input type="text" placeholder="payee" name="payee"></input></p>
+       <p> <input type="text" placeholder="category" name="category"></input></p>
+       <p> <input type="text" placeholder="outflow" name="outflow"></input></p>
+       <p> <input type="text" placeholder="inflow" name="inflow"></input></p>
+       <p> <input type="Submit"></p>
+      </form>
+    </div>
+  </div>
 </div>
 
-<div class="inputBox" <%= if(session[:message] == "false") then ('hidden') end %>>
-<!-- action is the the method that runs in the main.rb. -->
-  <form action ="/submit" method ="post">
-  <h2>add a transaction for <%= @name %></h2>
-<!--  "name" is the key, anything the user puts in the box is the value -->
-   <p> <input type="hidden" value="<%= @name %>" name="account"></input></p>
-   <p> <input  type="text" placeholder="date" name="date"></input><br></p>
-   <p> <input type="text" placeholder="payee" name="payee"></input></p>
-   <p> <input type="text" placeholder="category" name="category"></input></p>
-   <p> <input type="text" placeholder="outflow" name="outflow"></input></p>
-   <p> <input type="text" placeholder="inflow" name="inflow"></input></p>
-   <p> <input type="Submit"></p>
-  </form>
-</div>
 </body>
 </html>
