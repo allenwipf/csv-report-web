@@ -42,11 +42,7 @@ a {
     font-family: monospace;
     font-size: 12px;
     color: #DBE2EF;
-
-
 }
-
-
 
 
 .current {
@@ -59,7 +55,6 @@ a:active {
 }
 
 
-
 p {
     
     margin-top: 0;
@@ -68,16 +63,13 @@ p {
 
 header {
     
-  
     position: absolute;
     top: 0;
     right: 0;
     left:0 ;
     background-color: #2F3C4F;
     height: 100px;
- 
 }
-
 
 
 footer {
@@ -92,19 +84,13 @@ footer {
     font-size: 12px;
     left:-10px;
     width: 100%;
-  
-
 } 
-
-
 
 
 .main {
     
     display: inline-block;
-    vertical-align: top;
-
-  
+    vertical-align: top;  
 }
 
 
@@ -114,11 +100,10 @@ footer {
     vertical-align: top;
     background-color: #BDC3C7;
     text-align: center;
-    padding: 15px;
-    font-size: 15px
-    border: 2px solid black;
+    padding: 10px;
+    font-size: 15px;
+    border: 2px solid #BDC3C7;
     border-radius: 20px;
-  
 }
 
 .admin {
@@ -134,8 +119,15 @@ footer {
     display: inline-block;
     vertical-align: top;
     padding-left: 10%;
-    padding-top: 90px; 
-  
+    padding-top: 90px;   
+}
+
+.contentfull {
+    
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 10%;
+    padding-top: 75px;   
 }
 
 .indexPage {
@@ -143,6 +135,7 @@ footer {
   padding-top: 120px; 
   padding-left: 120px
 }
+
 
 
 
@@ -202,10 +195,13 @@ tr:nth-child(even) {
 .inputBox {
 
     padding-left: 15px;
-    padding-top: 53px;
+    padding-top: 50px;
 }
 
+#inputFull {
 
+    padding-top: 65px;
+}
 
 /* FROM W3School.com
 
@@ -256,11 +252,11 @@ tr:nth-child(even) {
     display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
+/* Change the background color of the dropdown button when the dropdown content is shown 
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
-
+*/
 
 
 

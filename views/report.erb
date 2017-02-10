@@ -36,7 +36,7 @@
   </div>
   
   <div class="main">
-    <div class="inputBox" <%= if(session[:message] == "false") then ('hidden') end %>>
+    <div class="inputBox" <%= if(session[:message] != "true") then ('hidden') end %>>
     <!-- action is the the method that runs in the main.rb. -->
       <form action ="/submit" method ="post">
       <h2>add a transaction for <%= @name %></h2>

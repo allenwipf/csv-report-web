@@ -29,11 +29,16 @@ get ("/login"){
 	erb :login
 }
 
+get ("/"){
+
+	redirect("/index")
+}
+
 post ("/login"){
      if (logins.key?(params["user"]) == true) and (logins[params["user"]] == params["pass"]) then
 		session[:message] = "true"
 		session["username"] = params["user"]
-		redirect("/admin")
+		redirect("/full")
 
 	else
 		

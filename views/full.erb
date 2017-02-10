@@ -16,7 +16,7 @@
 
 
 
-<div class="content">
+<div class="contentfull">
   <div class="main">
     <% x=0 %>
 
@@ -24,7 +24,6 @@
       <br>
       <h1><%= @names[x] %></h1> 
       <h5>$<%= account.pretty_tally %></h5>
-      <hr>
       <table>
         <tr>
           <th>Category</th>
@@ -49,10 +48,10 @@
 
 
   <div class="main">
-      <div class="inputBox" <%= if(session[:message] != "true") then ('hidden') end %>>
+      <div class="inputBox" id="inputFull" <%= if(session[:message] != "true") then ('hidden') end %>>
       <!-- action is the the method that runs in the main.rb. -->
         <form action ="/submit" method ="post">
-         <h4>Please enter a transaction</h4>
+         <h2>Please enter a transaction</h2>
          <p> <input type="text" placeholder="name" name="account"></input></p>
          <p> <input type="text" placeholder="date" name="date"></input><br></p>
          <p> <input type="text" placeholder="paye" name="payee"></input></p>

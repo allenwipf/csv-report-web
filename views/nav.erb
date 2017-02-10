@@ -16,7 +16,7 @@
 				<p class="welcome">Not Logged in. Please Log in</p></form>
 			</form>
 
-			<form action="/logout" method="post" <%= if(session[:message] == "false") then ("hidden") end %>>
+			<form action="/logout" method="post" <%= if(session[:message] == "false") || (session[:message].nil?) then ("hidden") end %>>
 				<p class="welcome"> Welcome: <%= session["username"] %>
 				<button type="Submit" name="logout">Log Out</button></p>
   			</form>
